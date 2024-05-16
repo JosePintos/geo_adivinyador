@@ -1,0 +1,48 @@
+.main_template{
+    display: grid; /* Use flexbox for layout */
+    justify-items: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+    width: 33.33%; /* Occupy one-third of the page width */
+    position: fixed; /* Fixed position */
+    top: 0; /* Stretch from top to bottom */
+    bottom: 0;
+    color: #000; /* Background color of the stripe */
+    background-color: #fff; /* Text color */
+}
+strong{
+    font-weight: normal;
+    color: #f90092;
+}
+.header_template{
+    position: fixed;
+    top: 0;
+    width: auto;
+    z-index: 1;
+    padding: 20px 0;
+    text-align: center;
+    grid-column: auto;
+}
+.header_template h3{    
+    font-family: "Pompiere", cursive;
+    font-weight: 400;
+    font-style: normal;
+    display: block;
+    margin: 0 0 16px 0;
+    font-size: 28px;
+}
+.header_template h1{
+    font-family: "Pompiere", cursive;
+    font-weight: 550;
+    font-style: normal;
+    display: block;
+    margin: 0 0 16px 0;
+    font-size: 72px;
+}
+.content_template{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 150px;
+    margin-bottom: auto;
+}
+
