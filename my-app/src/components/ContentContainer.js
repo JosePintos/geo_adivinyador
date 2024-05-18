@@ -10,7 +10,6 @@ const ContentContainer = ({ children }) => {
           <strong>nya</strong>
           dor
         </h1>
-        <h2></h2>
         <h3>Haz click en tu gatito favorito 😸.</h3>
       </div>
       <div className="content_template">{children}</div>
