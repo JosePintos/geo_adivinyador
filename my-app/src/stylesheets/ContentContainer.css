@@ -1,3 +1,8 @@
+*{
+    font-family: "Pompiere", cursive;
+    font-weight: 550;
+    font-style: normal;
+}
 .main_template{
     display: grid; /* Use flexbox for layout */
     justify-items: center; /* Center children vertically */
@@ -22,27 +27,39 @@ strong{
     text-align: center;
     grid-column: auto;
 }
-.header_template h3{    
-    font-family: "Pompiere", cursive;
-    font-weight: 400;
-    font-style: normal;
-    display: block;
-    margin: 0 0 16px 0;
-    font-size: 28px;
-}
+
 .header_template h1{
-    font-family: "Pompiere", cursive;
-    font-weight: 550;
-    font-style: normal;
     display: block;
     margin: 0 0 16px 0;
     font-size: 72px;
 }
 .content_template{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: center;
     padding-top: 150px;
     margin-bottom: auto;
+    align-items: center;
+}
+.content_template h3{    
+    font-family: "Pompiere", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+    flex: 1 0 100%;
+    text-align: center;
+}
+.content_template Button {
+    background-color:#f90092;
+    color:#fff;
+    font-family: "Pompiere", cursive;
+    font-size: larger;
+    text-transform: none;
+    transition-duration: 0.2s;
 }
 
+.content_template Button:hover{
+    background-color:#e01fa0;
+}

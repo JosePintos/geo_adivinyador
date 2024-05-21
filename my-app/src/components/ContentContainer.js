@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "../stylesheets/ContentContainer.css";
 
-const ContentContainer = ({ children }) => {
+const ContentContainer = ({ children, isPicked }) => {
   return (
     <div className="main_template">
       <div className="header_template">
@@ -10,9 +10,16 @@ const ContentContainer = ({ children }) => {
           <strong>nya</strong>
           dor
         </h1>
-        <h3>Haz click en tu gatito favorito 😸.</h3>
       </div>
-      <div className="content_template">{children}</div>
+      <div className="content_template">
+        {!isPicked && (
+          <>
+            <h3>Haz click en tu gatito favorito 😸.</h3>
+          </>
+        )}
+
+        {children}
+      </div>
     </div>
   );
 };

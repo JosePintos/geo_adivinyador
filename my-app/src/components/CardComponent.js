@@ -2,7 +2,7 @@ import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import { CardActionArea } from "@mui/material";
 
-const CardComponent = ({ img_file }) => {
+const CardComponent = ({ img_file, setIsPicked }) => {
   return (
     <Card
       variant="outlined"
@@ -13,7 +13,11 @@ const CardComponent = ({ img_file }) => {
         boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.2)",
       }}
     >
-      <CardActionArea>
+      <CardActionArea
+        onClick={() => {
+          setIsPicked(true);
+        }}
+      >
         <CardMedia
           component="img"
           height="100%"
