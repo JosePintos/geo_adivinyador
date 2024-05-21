@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <ContentContainer isPicked={isPicked}>
-        {geolocation.length == 0 && isPicked && (
+        {geolocation.length === 0 && isPicked && (
           <>
             <h3>Eso fue facíl!😸.</h3>
           </>

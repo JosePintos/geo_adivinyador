@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "../stylesheets/ContentContainer.css";
 
 const ContentContainer = ({ children, isPicked }) => {
