@@ -1,6 +1,6 @@
 import "../stylesheets/ContentContainer.css";
 
-const ContentContainer = ({ children, isPicked }) => {
+const ContentContainer = ({ children, isFinished }) => {
   return (
     <div className="main_template">
       <div className="header_template">
@@ -11,7 +11,7 @@ const ContentContainer = ({ children, isPicked }) => {
         </h1>
       </div>
       <div className="content_template">
-        {!isPicked && (
+        {!isFinished && (
           <>
             <h3>Haz click en tu gatito favorito 😸.</h3>
           </>

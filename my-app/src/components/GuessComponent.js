@@ -2,11 +2,20 @@ import React from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 
-const GuessComponent = ({ geo_guess, setGeo, setIsCorrect, setIsPicked }) => {
+const GuessComponent = ({
+  geo_guess,
+  setGeo,
+  setIsCorrect,
+  setIsPicked,
+  setIsFinished,
+}) => {
   const handleAnswerQuestion = () => {
     setIsCorrect(true);
     setIsPicked(false);
     setGeo(geo_guess.slice(0, -1));
+    if (geo_guess.length === 0) {
+      setIsFinished(true);
+    }
   };
 
   return (

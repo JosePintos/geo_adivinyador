@@ -10,11 +10,14 @@ function App() {
   const [geolocation, setGeo] = useState("");
   const [isCorrect, setIsCorrect] = useState(true);
   const [isPicked, setIsPicked] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
     const fetchIp = async () => {
       try {
-        const res = await axios.get("http://127.0.0.1:5000/api/get_ip");
+        const res = await axios.get(
+          "https://geo-adivinyador.onrender.com/api/get_ip"
+        );
         const continent_api = await axios.get(
           `https://restcountries.com/v3.1/alpha/${res.data.country}`
         );
@@ -28,17 +31,15 @@ function App() {
     };
     fetchIp();
   }, []);
-  console.log(geolocation);
 
   return (
     <div className="App">
-      <ContentContainer isPicked={isPicked}>
-        {geolocation.length === 0 && isPicked && (
+      <ContentContainer isFinished={isFinished}>
+        {isFinished ? (
           <>
             <h3>Eso fue facíl!😸.</h3>
           </>
-        )}
-        {!isCorrect ? (
+        ) : !isCorrect ? (
           <h3>Se hizo lo que se pudo 😿.</h3>
         ) : !isPicked ? (
           <>
@@ -51,6 +52,7 @@ function App() {
             setGeo={setGeo}
             setIsCorrect={setIsCorrect}
             setIsPicked={setIsPicked}
+            setIsFinished={setIsFinished}
           />
         )}
       </ContentContainer>
