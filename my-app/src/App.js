@@ -2,7 +2,7 @@ import "./App.css";
 import ContentContainer from "./components/ContentContainer";
 import CardComponent from "./components/CardComponent";
 import GuessComponent from "./components/GuessComponent";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import cats_get from "./services/catsService";
 import geolocation_formatted from "./services/geolocationService";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -27,11 +27,15 @@ function App() {
     fetchInitInfo();
   }, []);
 
-  useEffect(() => {
+  const avoidRepeatedCards = useCallback(() => {
     if (isPicked) {
-      setImgUrls(imgUrls.slice(2, imgUrls.length));
+      setImgUrls((prevImgUrls) => [...prevImgUrls.slice(2)]);
     }
   }, [isPicked]);
+
+  useEffect(() => {
+    avoidRepeatedCards();
+  }, [isPicked, avoidRepeatedCards]);
 
   return (
     <div className="App">
@@ -40,7 +44,7 @@ function App() {
           <Box sx={{ display: "flex" }}>
             <CircularProgress />
           </Box>
-        ) : isFinished ? (
+        ) : isFinished && isCorrect ? (
           <>
             <h3>Eso fue facíl!😸.</h3>
           </>

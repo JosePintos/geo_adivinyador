@@ -3,7 +3,11 @@ import "../stylesheets/ContentContainer.css";
 const ContentContainer = ({ children, isFinished }) => {
   return (
     <div className="main_template">
-      <div className="header_template">
+      <div
+        className="header_template"
+        onClick={() => window.location.reload()}
+        style={{ cursor: "pointer" }}
+      >
         <h1>
           Geo Adivi
           <strong>nya</strong>

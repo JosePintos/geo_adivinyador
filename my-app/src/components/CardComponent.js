@@ -20,8 +20,8 @@ const CardComponent = ({ img_file, setIsPicked }) => {
       >
         <CardMedia
           component="img"
-          height="100%"
-          width="100%"
+          width="250"
+          height="250"
           image={img_file}
           alt={img_file}
         />

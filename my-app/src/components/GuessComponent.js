@@ -37,6 +37,7 @@ const GuessComponent = ({
           variant="contained"
           onClick={() => {
             setIsCorrect(false);
+            setIsFinished(true);
           }}
         >
           No
