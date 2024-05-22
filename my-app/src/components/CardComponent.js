@@ -22,7 +22,7 @@ const CardComponent = ({ img_file, setIsPicked }) => {
           component="img"
           height="100%"
           width="100%"
-          image={require(`../static/${img_file}.png`)}
+          image={img_file}
           alt={img_file}
         />
       </CardActionArea>

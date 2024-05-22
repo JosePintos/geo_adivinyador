@@ -13,7 +13,7 @@ const GuessComponent = ({
     setIsCorrect(true);
     setIsPicked(false);
     setGeo(geo_guess.slice(0, -1));
-    if (geo_guess.length === 0) {
+    if (geo_guess.length === 1) {
       setIsFinished(true);
     }
   };
