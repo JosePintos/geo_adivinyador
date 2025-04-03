@@ -5,7 +5,7 @@ import logging
 
 app = Flask(__name__)
 CORS(app)
-TOKEN = "edbf7d4ca8e928"
+TOKEN = ""
 
 
 def get_geolocation(ip_address):
